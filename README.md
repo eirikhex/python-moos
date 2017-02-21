@@ -51,8 +51,13 @@ Make a new python MOOSApp:
     ./GenPythonMOOSApp name prefix
 
 Run app with:
+
     ./MOOSApp.py [moos-config-file.moos] [Alias]
+    
 or
+
     ./MOOSApp.py [moos-config-file.moos]
+    
 or
+
     ./MOOSApp.py
