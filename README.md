@@ -51,8 +51,28 @@ Make a new python MOOSApp:
     ./GenPythonMOOSApp name prefix
 
 Run app with:
+
     ./MOOSApp.py [moos-config-file.moos] [Alias]
+    
 or
+
     ./MOOSApp.py [moos-config-file.moos]
+    
 or
+
     ./MOOSApp.py
+    
+or by adding an entry to your .moos file ANTLER configuration block:
+    
+    ProcessConfig = ANTLER
+    {
+    MSBetweenLaunches = 200
+    Run = MOOSDB		@ NewConsole = false
+    Run = MoosApp.py @ NewConsole = false, path=/location/of/moosapp ~ Alias
+    }
+    
+    ProcessConfig = Alias
+    {
+        // Set frequency of App
+        AppTick   = 60
+    }
