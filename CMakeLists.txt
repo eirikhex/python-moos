@@ -55,4 +55,7 @@ set_target_properties(pymoos
 
 TARGET_LINK_LIBRARIES(pymoos ${Boost_LIBRARIES} ${PYTHON_LIBRARIES} ${MOOS_LIBRARIES})
 
+string(REGEX MATCH "^([0-9]+)\\.([0-9]+)*" python_version ${PYTHONLIBS_VERSION_STRING} )
+string(CONCAT python_version "/usr/local/lib/python" ${python_version} "/dist-packages" ) 
+message("-- Install path is set to " ${python_version})
 install(TARGETS pymoos DESTINATION /usr/local/lib/python3/dist-packages)
